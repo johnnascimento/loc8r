@@ -1,0 +1,147 @@
+﻿//
+//  some utils classes
+//  _____________________________________________
+
+.pseudo {
+    content: " ";
+    font-size: 0;
+    display: block;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: @layout__max-width;
+
+  padding: 0 @gutter;
+
+    &:before, &:after {
+        &:extend(.pseudo);
+        clear: both;
+    }
+}
+
+.clear {
+    &:before, &:after {
+        &:extend(.pseudo);
+        clear: both;
+    }
+}
+
+
+//
+//  List helper
+//  _____________________________________________
+.hl,
+.horizoltal-list {
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: 0;
+}
+
+.hli,
+.horizoltal-list-item {
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+
+    font-size: 1rem;
+}
+
+
+//
+//  Image helper
+//  _____________________________________________
+
+.img-cropWrapper {
+    position:relative;
+    overflow: hidden;
+    line-height: 0;
+    font-size: 0;
+
+    padding-top: 10%;
+
+    > img {
+        top: -150%;
+        bottom: -150%;
+        left: -150%;
+        right: -150%;
+        position: absolute;
+        margin: auto;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        max-width: none;
+        max-height: none;
+    }
+}
+
+.imgc {
+    .img-cropWrapper();
+}
+
+.imgcI {
+    top: -150%;
+    bottom: -150%;
+    left: -150%;
+    right: -150%;
+    position: absolute;
+    margin: auto;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    max-width: none;
+    max-height: none;
+}
+
+//
+//  mixins
+//  _____________________________________________
+
+html {
+  font-size: 62.5%; /* Sets up the Base 10 stuff */
+}
+
+.font-size(@sizeValue) {
+    @remValue: @sizeValue;
+    @pxValue: (@sizeValue * 10);
+    font-size: ~"@{pxValue}px";
+    font-size: ~"@{remValue}rem";
+}
+
+.checkbox (@content) {
+    .f-ico();
+    .font-size(2);
+    font-weight: 700;
+    content: @content;
+    color: @c-heavyMetal;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: @gutter / 2;
+    background-color: @c-white;
+    border: 1px solid @c-boulder;
+    vertical-align: sub;
+}
+
+.pageTitle(@size: 2.8){
+  color: @c-tundora;
+  margin:0 0 @gutter*2 0;
+  border-left: 3px solid @c-christine;
+  padding: @gutter/2 @gutter*2;
+  strong, p, span, h1 {
+      .font-size(@size);
+  }
+}
+
+.bg-variant(@color) {
+  background-color: @color;
+
+  &[href] {
+    &:hover,
+    &:focus {
+      background-color: darken(@color, 5%);
+    }
+  }
+}
