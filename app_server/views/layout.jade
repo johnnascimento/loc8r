@@ -1,8 +1,15 @@
 doctype html
 html
   head
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='icon', sizes='16x16 32x32 48x48 64x64', href='images/favicon.ico')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='bootstrap/css/amelia.bootstrap.min.css')
   body
-    block content
+    block contentBody
+
+    script(src='https://code.jquery.com/jquery-3.4.1.min.js'
+  integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=' crossorigin='anonymous')
+    script(src='bootstrap/js/bootstrap.min.js')
