@@ -1,9 +1,110 @@
-﻿body {
+﻿// ALL DEVICES
+// __________________________________________________________________
+
+body {
     padding: 50px;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  }
-  
-  a {
-    color: @c-lightblue;
-  }
-  
+    font-size: 14px;
+    font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+
+    a {
+        color: @c-lightblue;
+    }
+}
+
+// MOBILE DEVICES
+// __________________________________________________________________
+@media (max-width: 768px) {
+    #navbar-main {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 0 16px;
+        margin: 0;
+        background: #8e1821;
+
+        .navbar-nav {
+            margin: 0 auto;
+            padding: 8px 0;
+        }
+    }
+
+    .navbar-brand {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+    }
+
+    .navbar-toggler {
+        position: absolute;
+        top: 50%;
+        right: 8px;
+        left: auto;
+        bottom: auto;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+
+        &.collapsed {
+            .icon-bars-wrapper .icon-bar {
+                position: relative;
+                margin-bottom: 4px;
+                top: auto;
+                left: auto;
+                right: auto;
+                transition: transform 300ms ease-in-out;
+
+                &:first-child,
+                &:last-child {
+                    transform: none;
+                    -webkit-transform: none;
+                }
+
+                &:nth-child(2) {
+                    display: block;
+                }
+            }
+        }
+
+        .icon-bars-wrapper {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            display: inline-block;
+            padding: 8px;
+
+            .icon-bar {
+                width: auto;
+                height: 4px;
+                display: block;
+                position: absolute;
+                top: 50%;
+                bottom: auto;
+                right: 8px;
+                left: 8px;
+                padding: 0;
+                margin: 0;
+                color: white;
+                background: white;
+                transition: transform 300ms ease-in-out;
+
+                &:first-child {
+                    transform: translateY(-50%) rotate(45deg);
+                    -webkit-transform: translateY(-50%) rotate(45deg);
+                }
+
+                &:last-child {
+                    transform: translateY(-50%) rotate(-45deg);
+                    -webkit-transform: translateY(-50%) rotate(-45deg);
+                }
+
+                &:nth-child(2) {
+                    display: none;
+                }
+            }
+        }
+    }
+}

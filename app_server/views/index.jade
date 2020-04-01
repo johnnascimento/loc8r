@@ -1,11 +1,9 @@
 extends layout
 
 block contentBody
-  div.header-wrapper
-    div.header Header
-
   div.container
     div.row
-      h1.title= title
-      p Welcome to #{title}
-      span #{description}
+      div.col-xs-12.col-sm-12.col-md-12
+        h1.title= title
+        p Welcome to #{title}
+        span #{description}
