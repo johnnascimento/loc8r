@@ -6,11 +6,12 @@
     "start": "node ./bin/www"
   },
   "engines": {
-      "node": "~10.17.0",
-      "npm": "~6.11.3"
+    "node": "~10.17.0",
+    "npm": "~6.11.3"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
+    "css-reset-and-normalize": "^2.1.0",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",

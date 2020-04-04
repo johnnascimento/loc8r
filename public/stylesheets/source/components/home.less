@@ -9,12 +9,18 @@
 // __________________________________________________________________
 
 body {
-    padding: 50px;
+    padding: (@navbarHSize) (@gutter) (@footerHSize);
     font-size: 14px;
     font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
 
     a {
         color: @c-lightblue;
+    }
+
+    nav.navbar {
+        height: @navbarHSize;
+        margin-bottom: 0;
+        box-shadow: 0 2px 4px rgba(25,25,25,0.7)
     }
 
     .breadcrumb {
@@ -26,16 +32,24 @@ body {
             }
         }
     }
+
+    .page-header {
+        margin: (@gutter/2) 0 (@gutter);
+    }
+
+    footer.container {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        max-width: none;
+        background: @c-merlot;
+        box-shadow: 0 -2px 4px rgba(25,25,25,0.7)
+    }
 }
 
 // MOBILE DEVICES
 // __________________________________________________________________
 @media (max-width: 768px) {
-    nav.navbar {
-        height: @navbarHSize;
-        margin-bottom: 0;
-    }
-
     #navbar-main {
         position: absolute;
         top: 100%;
