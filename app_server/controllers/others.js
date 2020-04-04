@@ -1,8 +1,11 @@
 ﻿module.exports = {
     about: function(req, res, next) {
-        res.render('index', {
+        res.render('locations-list', {
             title: 'About us page',
-            description: 'About us page\'s description'
+            breadcrumb: {
+                home: 'About us',
+                path: '/about'
+            }
         });
     }
 }

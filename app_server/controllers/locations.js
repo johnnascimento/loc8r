@@ -1,25 +1,43 @@
 ﻿module.exports = {
     // Get Homepage page
     homelist: function(req, res, next) {
-        res.render('index', {
-            title: 'Home page',
-            description: 'Studying express, Mongo DB, Angular and Node lika a pro'
+        var requisition = req;
+
+        res.render('locations-list', {
+            title: 'Locations list page',
+            breadcrumb: {
+                home: 'Home',
+                path: '/'
+            },
+            reqObj: requisition
         });
     },
 
     // Get locationInfo page
     locationInfo: function(req, res, next) {
-        res.render('index', {
-            title: 'Location page',
-            description: 'Location page\'s description'
+        var requisition = req;
+
+        res.render('locations-list', {
+            title: 'Location Info page',
+            breadcrumb: {
+                home: 'Location list',
+                path: '/location'
+            },
+            reqObj: requisition
         });
     },
 
     // Get add review page
     addReview: function(req, res, next) {
-        res.render('index', {
+        var requisition = req;
+
+        res.render('locations-list', {
             title: 'Review page',
-            description: 'Review page\'s description'
+            breadcrumb: {
+                home: 'Review page',
+                path: '/location/review/new'
+            },
+            reqObj: requisition
         });
     }
 }

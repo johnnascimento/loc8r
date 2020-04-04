@@ -1,4 +1,11 @@
-﻿// ALL DEVICES
+﻿// LOCAL VARIABLES
+// __________________________________________________________________
+
+@footerHSize: 50px;
+@navbarHSize: 65px;
+
+
+// ALL DEVICES
 // __________________________________________________________________
 
 body {
@@ -9,11 +16,26 @@ body {
     a {
         color: @c-lightblue;
     }
+
+    .breadcrumb {
+        margin-bottom: 0;
+
+        .breadcrumb-item {
+            &:not(.active) {
+                display: none;
+            }
+        }
+    }
 }
 
 // MOBILE DEVICES
 // __________________________________________________________________
 @media (max-width: 768px) {
+    nav.navbar {
+        height: @navbarHSize;
+        margin-bottom: 0;
+    }
+
     #navbar-main {
         position: absolute;
         top: 100%;
@@ -21,7 +43,7 @@ body {
         right: 0;
         padding: 0 16px;
         margin: 0;
-        background: #8e1821;
+        background: @c-merlot;
 
         .navbar-nav {
             margin: 0 auto;
@@ -32,11 +54,11 @@ body {
     .navbar-brand {
         position: absolute;
         top: 50%;
-        left: 50%;
+        left: 8px;
         right: auto;
         bottom: auto;
-        transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
     }
 
     .navbar-toggler {
@@ -55,7 +77,7 @@ body {
                 top: auto;
                 left: auto;
                 right: auto;
-                transition: transform 300ms ease-in-out;
+                transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
 
                 &:first-child,
                 &:last-child {
@@ -65,6 +87,7 @@ body {
 
                 &:nth-child(2) {
                     display: block;
+                    opacity: 1;
                 }
             }
         }
@@ -89,7 +112,7 @@ body {
                 margin: 0;
                 color: white;
                 background: white;
-                transition: transform 300ms ease-in-out;
+                transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
 
                 &:first-child {
                     transform: translateY(-50%) rotate(45deg);
@@ -102,9 +125,68 @@ body {
                 }
 
                 &:nth-child(2) {
-                    display: none;
+                    display: block;
+                    opacity: 0;
                 }
             }
         }
+    }
+}
+
+
+// DESKTOP DEVICES
+// __________________________________________________________________
+@media (min-width: 768px) {
+    footer {
+        height: @footerHSize;
+
+        small {
+            & > div {
+                line-height: @footerHSize;
+
+                &:first-child {
+                    text-align: left;
+                }
+
+                &:nth-child(2) {
+                    text-align: center;
+                }
+
+                &:last-child {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+// ANIMATION
+// __________________________________________________________________
+@keyframes hideBar {
+    0% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0;
+    }
+
+    100% {
+        display: none;
+    }
+}
+
+@keyframes showBar {
+    0% {
+        opacity: 0;
+        display: none;
+    }
+
+    30% {
+        display: block;
+    }
+
+    100% {
+        opacity: 1;
     }
 }

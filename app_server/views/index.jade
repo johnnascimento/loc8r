@@ -1,6 +1,11 @@
 extends layout
 
 block contentBody
+  nav(arial-label="breadcrumb")
+    ol.breadcrumb
+      li.breadcrumb-item.active
+        a(href="/") Home
+
   div.container
     div.row
       div.col-xs-12.col-sm-12.col-md-12
