@@ -1,0 +1,16 @@
+﻿extends layout
+
+block contentBody
+    #banner.page-header
+        .row
+            .col-md-6.col-sm-12
+        - var pathUrl = template.url
+        case pathUrl
+            when 'about-us.jade'
+                h1= template.aboutUs.title
+                include ./includes/internal-pages/about-us.jade
+            when 'terms-and-conditions.jade'
+                h1= template.termsAndConditions.title
+                include ./includes/internal-pages/terms-and-conditions.jade
+            default
+                include ./includes/internal-pages/error.jade

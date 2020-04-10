@@ -17,6 +17,7 @@
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "less-middleware": "~2.2.1",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "ol": "^6.3.1"
   }
 }

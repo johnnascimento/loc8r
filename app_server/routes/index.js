@@ -5,10 +5,12 @@ var ctrlOthers = require('../controllers/others');
 
 /* GET location */
 router.get('/', ctrlLocation.homelist);
-router.get('/location', ctrlLocation.locationInfo);
-router.get('/location/review/new', ctrlLocation.addReview);
+router.get('/locations', ctrlLocation.homelist);
+router.get('/location-info', ctrlLocation.locationInfo);
+router.get('/review-new', ctrlLocation.addReview);
 
 /* GET Others */
-router.get('/about', ctrlOthers.about);
+router.get('/about-us', ctrlOthers.genericPages);
+router.get('/terms-and-conditions', ctrlOthers.genericPages);
 
 module.exports = router;

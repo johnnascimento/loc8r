@@ -1,0 +1,109 @@
+extends layout
+
+block prepend cssFiles
+  link(rel="stylesheet", href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css", type="text/css")
+
+block prepend scriptFiles
+  script(src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js")
+
+block contentBody
+  #page.page-header
+    .row
+      .col-lg-12
+        h1 #{title}
+
+  .row
+    .col-xs-12.col-md-9
+      .row
+        .col-xs-12.col-sm-6
+          p.rating
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star-empty
+            span.glyphicon.glyphicon-star-empty
+
+          p 125 High Street, Reading, RG6 1PS
+          .panel.panel-primary
+            .panel-heading
+              h2.panel-title Opening hours
+            .panel-body
+              p Monday - Friday : 7:00am - 7:00pm
+              p Saturday : 8:00am - 5:00pm
+              p Sunday : closed
+          .panel.panel-primary
+            .panel-heading
+              h2.panel-title Facilities
+            .panel-body
+              span.label.label-warning
+              span.glyphicon.glyphicon-ok
+              | &nbsp;Hot drinks
+              | &nbsp;
+              span.label.label-warning
+              span.glyphicon.glyphicon-ok
+              | &nbsp;Food
+              | &nbsp;
+              span.label.label-warning
+              span.glyphicon.glyphicon-ok
+              | &nbsp;Premium wifi
+              | &nbsp;
+        .col-xs-12.col-sm-6.location-map
+          .panel.panel-primary
+            .panel-heading
+                h2.panel-title Location map
+            .panel-body#locationMap
+            script(type="text/javascript").
+              //- Website to use: http://epsg.io/map#srs=4326&x=-46.614990&y=-23.538809&z=7&layer=streets and https://openlayers.org/en/latest/doc/faq.html
+              const spLonLat = [-46.614990, -23.538809];
+              const spLonLatWebMercator = ol.proj.fromLonLat(spLonLat);
+              var map = new ol.Map({
+                target: 'locationMap',
+                layers: [
+                  new ol.layer.Tile({
+                    source: new ol.source.OSM()
+                  })
+                ],
+                view: new ol.View({
+                  center: spLonLatWebMercator,
+                  zoom: 6
+                })
+              });
+
+      .row
+        .col-xs-12
+          .panel.panel-primary.review-panel
+            .panel-heading
+              h2.panel-title.d-inline-block Customer reviews
+              a.btn.btn-default.d-inline-block(href="/review-new") Add review
+            .panel-body.review-container.d-block.p-0.m-0
+              .row.m-0
+                .review.col-12.p-0.m-0
+                  .well.well-sm.review-header
+                    span.rating
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                    span.reviewAuthor Simon Holmes
+                    small.reviewTimestamp 16 July 2013
+                  .col-12.p-2.pl-4.pr-4.m-0
+                    p What a great place. I can't say enough good things about it.
+              .row.m-0
+                .review.col-12.p-0.m-0
+                  .well.well-sm.review-header
+                    span.rating
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star-empty
+                      span.glyphicon.glyphicon-star-empty
+                    span.reviewAuthor Charlie Chaplin
+                    small.reviewTimestamp 16 June 2013
+                  .col-12.p-2.pl-4.pr-4.m-0
+                    p It was okay. Coffee wasn't great, but the wifi was fast.
+    .col-xs-12.col-md-3.pb-5
+      p.lead Simon's cafe is on Loc8r because it has accessible wifi and space
+      to sit down with your laptop and get some work done.
+      p If you've been and you like it - or if you don't - please leave a
+      review to help other people just like you.
