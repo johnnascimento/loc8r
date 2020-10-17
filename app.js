@@ -40,4 +40,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+// Locally access localhost:3000 to see the actual site
+// Remotelly, access: http://
 module.exports = app;
