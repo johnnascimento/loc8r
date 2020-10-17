@@ -41,5 +41,5 @@ app.use(function(err, req, res, next) {
 });
 
 // Locally access localhost:3000 to see the actual site
-// Remotelly, access: http://
+// Remotelly, access: https://loc8r-john.herokuapp.com/
 module.exports = app;
