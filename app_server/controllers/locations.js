@@ -2,7 +2,11 @@
     // Get Homepage page
     homelist: function(req, res, next) {
         res.render('locations-list', {
-            title: 'Locations list page'
+            title: 'Loc8r - find a place to work with wi-fi',
+            pageHeader: {
+                title: 'Loc8r',
+                strapline: 'Find places to work with wi-fi near you!'
+            }
         });
     },
 
