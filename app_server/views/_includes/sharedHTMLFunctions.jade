@@ -1,0 +1,17 @@
+mixin outputRating(rating)
+    - for (var x = 0; x <= 5; x++)
+        if x > rating && x !== 0
+            span.glyphicon.glyphicon-star-empty
+        if x <= rating && x !== 0
+            span.glyphicon.glyphicon-star
+
+mixin outputFacilities(facilities, hasBg)
+    each item in facilities
+        if(hasBg)
+            span.label.label-warning= item
+            &nbsp;
+        else
+            span.label.label-warning
+            span.glyphicon.glyphicon-ok
+            | &nbsp; #{ item }
+            | &nbsp;

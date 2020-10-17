@@ -1,4 +1,4 @@
-﻿extends layout
+extends layout
 
 block contentBody
     #banner.page-header
@@ -8,9 +8,9 @@ block contentBody
         case pathUrl
             when 'about-us.jade'
                 h1= template.aboutUs.title
-                include ./includes/internal-pages/about-us.jade
+                include ./_includes/internal-pages/about-us.jade
             when 'terms-and-conditions.jade'
                 h1= template.termsAndConditions.title
-                include ./includes/internal-pages/terms-and-conditions.jade
+                include ./_includes/internal-pages/terms-and-conditions.jade
             default
-                include ./includes/internal-pages/error.jade
+                include ./_includes/internal-pages/error.jade
