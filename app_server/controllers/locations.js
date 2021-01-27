@@ -60,7 +60,8 @@
                 }
             ],
             sidebar: {
-                content: 'Looking for wifi and a seat? Loc8r helps you find places to work when out and about. Perhaps with coffee, cake or a pint? Let Loc8r help you find the place you\'re looking for.'
+                lead: 'Looking for wifi and a seat? Loc8r helps you find places to work when out and about. Perhaps with coffee, cake or a pint? Let Loc8r help you find the place you\'re looking for.',
+                regular: ''
             }
         });
     },
@@ -81,14 +82,25 @@
                     lat: 51.455041,
                     lng: -0.9690884 
                 },
-                workingHoursBlock: {
-                    title: 'Opening hours',
-                    timeSheet: [
-                        'Monday - Friday : 7:00am - 7:00pm',
-                        'Saturday : 8:00am - 5:00pm',
-                        'Sunday : closed'
-                    ]
-                },
+                openingTimesTitle: 'Opening hours',
+                openingTimes: [
+                    {
+                        days: 'Monday - Friday',
+                        opening: '7:00am',
+                        closing: '7:00pm',
+                        closed: false,
+                    },
+                    {
+                        days: 'Saturday',
+                        opening: '8:00am',
+                        closing: '5:00pm',
+                        closed: false,
+                    },
+                    {
+                        days: 'Sunday and Holidays',
+                        closed: true,
+                    }
+                ],
                 map: {
                     title: 'Location map'
                 },
@@ -97,38 +109,36 @@
                     btnAddReview: 'Add review',
                     reviewsStack: [
                         {
-                            reviewerName: 'Simon Holmes',
+                            author: 'Simon Holmes',
                             rating: 1,
-                            date: '16 July 2013',
-                            comment: `What a great place. I can't say enough good things about it.`
+                            reviewText: `What a great place. I can't say enough good things about it.`,
+                            createdOn: '16 July 2013'
                         },
                         {
-                            reviewerName: 'Charlie Chaplin',
+                            author: 'Charlie Chaplin',
                             rating: 3,
-                            date: '16 September 2020',
-                            comment: `What a great place. I can't say enough good things about it.`
+                            reviewText: `What a great place. I can't say enough good things about it.`,
+                            createdOn: '16 September 2020'
                         },
                         {
-                            reviewerName: 'Kratos the God of War',
+                            author: 'Kratos the God of War',
                             rating: 2,
-                            date: '25 June 2019',
-                            comment: `What a great place. I can't say enough good things about it.`
+                            reviewText: `What a great place. I can't say enough good things about it.`,
+                            createdOn: '25 June 2019'
                         },
                         {
-                            reviewerName: 'Zeus',
+                            author: 'Zeus',
                             rating: 5,
-                            date: '01 February 1991',
-                            comment: `What a great place. I can't say enough good things about it.`
+                            reviewText: `What a great place. I can't say enough good things about it.`,
+                            createdOn: '01 February 1991'
                         },
                     ]
                 },
                 sidebar: {
-                    content: {
-                        lead: `Simon\'s cafe is on Loc8r because it has accessible wifi and space
+                    lead: `Simon\'s cafe is on Loc8r because it has accessible wifi and space
                                 to sit down with your laptop and get some work done.`,
-                        regular: `If you\'ve been and you like it - or if you don't - please leave a
-                                    review to help other people just like you.`
-                    }
+                    regular: `If you\'ve been and you like it - or if you don't - please leave a
+                                review to help other people just like you.`
                 }
             }
         });

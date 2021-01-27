@@ -24,10 +24,13 @@ block contentBody
                     p= location.address
                     .panel.panel-primary
                         .panel-heading
-                            h2.panel-title= location.workingHoursBlock.title
+                            h2.panel-title= location.openingTimesTitle
                         .panel-body
-                            each item in location.workingHoursBlock.timeSheet
-                                p= item
+                            each item in location.openingTimes
+                                div.p-2.d-block
+                                    span.d-block= item.days
+                                    span.pr-2= item.opening
+                                    span.pr-2= item.closing
                     .panel.panel-primary
                         .panel-heading
                             h2.panel-title= location.facilities.title
@@ -69,11 +72,11 @@ block contentBody
                                         .well.well-sm.review-header
                                             span.rating.pr-4
                                                 +outputRating(review.rating)
-                                                &nbsp; | 
-                                            span.reviewAuthor.pr-4 #{ review.reviewerName } &nbsp; |
-                                            small.reviewTimestamp.pr-4 #{ review.date } &nbsp;
+                                                span.d-block.p-2
+                                            span.reviewAuthor.pr-4 #{ review.author } &nbsp; |
+                                            small.reviewTimestamp.pr-4 #{ review.createdOn } &nbsp;
                                         .col-12.p-2.pl-4.pr-4.m-0
-                                            p= review.comment
+                                            p= review.reviewText
         .col-xs-12.col-md-3.pb-5
-            p.lead= location.sidebar.content.lead
-            p= location.sidebar.content.regular
+            p.lead= location.sidebar.lead
+            p= location.sidebar.regular

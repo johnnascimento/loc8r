@@ -16,9 +16,9 @@ mixin outputFacilities(facilities, hasBg)
     each item in facilities
         if(hasBg)
             span.label.label-warning= item
-            &nbsp;
+            span.d-block.p-2
         else
             span.label.label-warning
             span.glyphicon.glyphicon-ok
-            | &nbsp; #{ item }
-            | &nbsp;
+                span.pr-2 #{ item }
+                span.d-block.p-2
