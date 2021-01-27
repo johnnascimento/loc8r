@@ -72,3 +72,6 @@ process.on('SIGTERM', function() {
         process.exit(0);
     });
 });
+
+// Requiring 'Location.js' file inside this one
+require('./locations');

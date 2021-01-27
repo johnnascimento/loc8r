@@ -19,7 +19,8 @@ block contentBody
                                 a(href='/location-info')= location.name
                                 small &nbsp;
                                     +outputRating(location.rating)
-                                span.badge.pull-right.badge-default= location.distance
+                                div.pull-right
+                                    +outputCoords(location.coords)
                                 p.address= location.address
                                 p.description
                                     +outputFacilities(location.facilities, true)

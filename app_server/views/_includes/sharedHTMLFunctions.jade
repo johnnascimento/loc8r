@@ -5,6 +5,13 @@ mixin outputRating(rating)
         if x <= rating && x !== 0
             span.glyphicon.glyphicon-star
 
+mixin outputCoords(coordsObj)
+    - for (var objKey in coordsObj)
+        if(objKey == 'lat')
+            span.badge.badge-default.d-block.mb-2= 'Lat: ' + coordsObj[objKey]
+        else
+            span.badge.badge-default.d-block.mb-2= 'Lng: ' + coordsObj[objKey]
+
 mixin outputFacilities(facilities, hasBg)
     each item in facilities
         if(hasBg)

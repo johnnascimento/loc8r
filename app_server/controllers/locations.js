@@ -13,35 +13,50 @@
                     address: 'A 125 Hight street, Reading, RG6 1PS',
                     rating: 3,
                     facilities: ['Breakfast', 'Food', 'Premium wi-fi'],
-                    distance: '100m'
+                    coords: { 
+                        lat: 51.455041,
+                        lng: -0.9690884 
+                    },
                 },
                 {
                     name: 'Cafe Hero',
                     address: 'B 125 High Street, Reading, RG6 1PS',
                     rating: 4,
                     facilities: ['Hot drinks', 'Food', 'Premium wifi'],
-                    distance: '200m'
+                    coords: { 
+                        lat: 51.455041,
+                        lng: -0.9690884 
+                    },
                 },
                 {
                     name: 'Burger Queen',
                     address: 'C 125 High Street, Reading, RG6 1PS',
                     rating: 2,
                     facilities: ['Food', 'Premium wifi'],
-                    distance: '250m'
+                    coords: { 
+                        lat: 51.455041,
+                        lng: -0.9690884 
+                    },
                 },
                 {
                     name: 'Burger Queen',
                     address: 'C 125 High Street, Reading, RG6 1PS',
                     rating: 0,
                     facilities: ['Food', 'Premium wifi'],
-                    distance: '250m'
+                    coords: { 
+                        lat: 51.455041,
+                        lng: -0.9690884 
+                    },
                 },
                 {
                     name: 'Burger Joker',
                     address: 'C 125 Broadway Avenue, Reading, RG6 5PS',
                     rating: 4,
                     facilities: ['Food', 'Premium wifi'],
-                    distance: '200m'
+                    coords: { 
+                        lat: 51.455041,
+                        lng: -0.9690884 
+                    },
                 }
             ],
             sidebar: {
@@ -62,7 +77,10 @@
                     title: 'Facilities',
                     items: ['Breakfast', 'Food', 'Premium wi-fi'],
                 },
-                distance: '100m',
+                coords: {
+                    lat: 51.455041,
+                    lng: -0.9690884 
+                },
                 workingHoursBlock: {
                     title: 'Opening hours',
                     timeSheet: [
